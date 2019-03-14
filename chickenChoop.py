@@ -11,6 +11,10 @@ class Chicken:
         self.species = species
         self.eggs = 0
 
+#  Representation of each chicken object
+    def __repr__(self):
+        return f"Name: {self.name}, species: {self.species}, eggs: {self.eggs}"
+
     def lay_egg(self):
         Chicken.total_eggs += 1
         self.eggs += 1
@@ -20,6 +24,7 @@ class Chicken:
 c1 = Chicken(name="Alice", species="Green leg")
 c2 = Chicken(name="Arthur", species="Black tail")
 
+
 print(Chicken.display_total_eggs())  # 0
 
 print(c1.lay_egg())  # 1
@@ -28,3 +33,7 @@ print(Chicken.display_total_eggs())  # 1
 print(c2.lay_egg())  # 1
 print(c2.lay_egg())  # 2
 print(Chicken.display_total_eggs())  # 3
+
+
+print(c1)
+print(c2)

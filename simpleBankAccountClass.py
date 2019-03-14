@@ -4,6 +4,10 @@ class BankAccount:
         self.owner = owner
         self.balance = balance
 
+# representation of bank account object
+    def __repr__(self):
+        return f"Owner is {self.owner} and account balance is {self.balance}"
+
     def deposit(self, amount):
         self.balance += amount
         return self.balance
@@ -22,3 +26,5 @@ print(acct.balance)
 
 acct.withdraw(10)
 print(acct.balance)
+
+print(acct)
