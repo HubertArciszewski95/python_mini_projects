@@ -5,7 +5,6 @@ It's a vacation calculator, if you are planning a journey you can do it by using
 3.Cost of renting car with discounnt( one day rent=40$, if you rent for 7 lub more days you will get 50$ discount,
 if 3 days or more discount will be 20$)
 4. Also program include extra money for spending them on everything we wanted
-To print cost of journey type print trip_cost(city, days, extra money)
 """
 
 
@@ -38,9 +37,22 @@ while True:
         else:
             break
 
+while True:
+    try:
+        days = int(input("How many days you want to stay?: "))
+    except ValueError:
+        print("You type wrong value. Try Again")
+    else:
+        break
 
-days = int(input("How many days you want to stay?: "))
-spending_money = int(input("How much money you want to take with you?: "))
+while True:
+    try:
+        spending_money = int(input("How much money you want to take with you?: "))
+    except ValueError:
+        print("You type wrong value. Try Again")
+    else:
+        break
+
 
 vacation_cost = trip_cost(city, days, spending_money)
 print(f"You vacation will cost {vacation_cost}")
