@@ -14,13 +14,13 @@ class Card:
 class Deck:
 
     def __init__(self):
-        suit_list = ["Hearts", "Diamonds", "Clubs", "Spades"]
-        value_list = ["A", "2", "3", "4", "5", "6",
+        suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
+        values = ["A", "2", "3", "4", "5", "6",
                       "7", "8", "9", "10", "J", "Q", "K"]
         # Creating 52 card objects using Card class
-        self.cards = [Card(y, x)for y in suit_list for x in value_list]
+        self.cards = [Card(x, y)for x in suits for y in values]
 
-    # Counting how many objects are in Deck class
+    # Count how many objects are in Deck class
     def count(self):
         return len(self.cards)
 
@@ -32,7 +32,7 @@ class Deck:
     # Here is hearth of dealing cards logic.
     # This method is private and only used inside class
     def _deal(self, number):
-        global dealed_cards
+        global dealt_cards
 
         try:
             # Logic for deal_card method
@@ -42,16 +42,16 @@ class Deck:
             # Logic for deal_hand method
             else:
                 counter = number
-                dealed_cards = []
+                dealt_cards = []
                 while counter > 0:
-                    dealed_cards.append(self.cards.pop())
+                    dealt_cards.append(self.cards.pop())
                     counter -= 1
-                return dealed_cards
+                return dealt_cards
 
         # Inform we want to deal more cards than are left in Deck
         except IndexError:
             print("All cards have been dealt")
-            return dealed_cards
+            return dealt_cards
 
     # Method that shuffle our deck.
     # Return ValueError if deck don't have 52 cards.
@@ -65,7 +65,7 @@ class Deck:
     def deal_card(self):
         return self._deal(1)
 
-    # Method to deal how much cards we want
+    # Method to deal how many cards we want
     def deal_hand(self, number):
         return self._deal(number)
 
@@ -74,7 +74,7 @@ my_deck = Deck()             # Creating Deck (list of 52 card objects)
 print(my_deck)               # Return representation of new created Deck
 my_deck.shuffle()            # Shuffle our full Deck (52 card objects)
 card = my_deck.deal_card()   # Deal one card from Deck
-print(card)                  # Return dealed card
+print(card)                  # Return dealt card
 hand = my_deck.deal_hand(5)  # Deal five cards from Deck
-print(hand)                  # Return dealed cards
+print(hand)                  # Return dealt cards
 print(my_deck)               # Return representation of modified Deck
