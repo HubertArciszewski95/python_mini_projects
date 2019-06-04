@@ -1,3 +1,7 @@
+# Create a program that asks the user to submit a string or number through a graphical user interface (GUI),
+# and that string or number is stored as a new line in an existing text file.
+# Please have three buttons: Add Line , Save Changes , and Save and Close .
+
 from tkinter import *
 
 # List for words typed by user in "text box"
