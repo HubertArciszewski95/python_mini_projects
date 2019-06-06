@@ -1,4 +1,3 @@
-
 def calculate(**kwargs):
 
     # Here i make all calculation
