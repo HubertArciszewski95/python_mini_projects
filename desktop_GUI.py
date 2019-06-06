@@ -12,8 +12,7 @@ words = []
 
 # "Add line" button logic
 def add_line():
-    get_input = text_box.get()
-    words.append(get_input)
+    words.append(text_box.get())
     text_box.delete(0, "end")
 
 
